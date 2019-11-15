@@ -1,0 +1,107 @@
+{
+  "users": [
+    {
+      "user_id": 1,
+      "first_name": "Cristina",
+      "last_name": "Sirb",
+      "email": "gabrielala.cristina@gmail.com",
+      "password": "1234",
+      "points": 50,
+      "reservation_id": null
+    },
+    {      
+      "user_id": 2,
+      "first_name": "Marius",
+      "last_name": "Mirica",
+      "email": "mariusmirica@gmail.com",
+      "password": "1234",
+      "points": 30,
+      "reservation_id": null
+    }
+  ],
+  "reservations": [
+    {
+      "reservation_id": 101,
+      "tennis_court_id": 10,
+      "tennis_table_id": null,
+      "date": "15/11/2019",
+      "user_id": 1,
+      "created_date": "03/11/2019",
+      "start_time": "14:00",
+      "end_time": "16:00"
+    },
+    {
+      "reservation_id": 102,
+      "tennis_court_id": null,
+      "tennis_table_id": 10,
+      "date": "19/11/2019",
+      "user_id": 2,
+      "created_date": "05/11/2019",
+      "start_time": "19:00",
+      "end_time": "20:00"
+    }
+  ],
+  "tennis_courts": [
+    {
+      "tennis_court_id": 10,
+      "available": 1,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_court_id": 11,
+      "available": 1,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_court_id": 12,
+      "available": 1,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_court_id": 13,
+      "available": 1,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_court_id": 14,
+      "available": 0,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    }
+  ],  "tennis_tables": [
+    {
+      "tennis_table_id": 10,
+      "available": 1,
+      "location": "Cluj",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_table_id": 11,
+      "available": 1,
+      "location": "Cluj",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_table_id": 12,
+      "available": 1,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_table_id": 13,
+      "available": 1,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    },
+    {
+      "tennis_table_id": 14,
+      "available": 0,
+      "location": "Bucharest",
+      "address": "bld. Pipera 13"
+    }
+  ]
+}
