@@ -5,7 +5,7 @@ This is TennisRentals application where you can rent tennis courts or tables.
 ## Team
 
 ```
-Mirica Marius - Developer
+Mirică Marius - Developer
 
 Sirb Cristina - Developer
 ```
