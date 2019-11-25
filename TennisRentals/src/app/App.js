@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
-
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import "../styles/taskker.css";
 import './App.css';
 
@@ -14,7 +16,13 @@ import TennisCourtsPage from './pages/TennisCourtsPage';
 import UserState from './context/users/state';
 import AppState from './context/app/state';
 import LogInPage from './pages/LogInPage';
+import { usersReducer } from './reducers/usersReducer';
 
+const rootReducer = combineReducers({
+  users: usersReducer,
+})
+
+const store = createStore(rootReducer, composeWithDevTools());
 
 class App extends Component {
 
@@ -22,7 +30,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-    
+    ceva: 'ceva'
     }
   }
 
@@ -30,7 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      
+      <Provider store={store}>
               <Switch>
                 <Route>
                   <AppState>
@@ -45,6 +53,7 @@ class App extends Component {
                   </AppState>
                 </Route>
               </Switch>
+       </Provider>
     );
   }
 }

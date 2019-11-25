@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import AppState from '../../../src/app/context/app/state';
 
 const Header = () => {
 
@@ -25,8 +24,13 @@ const Header = () => {
     <span className="ml-2 d-none d-lg-block"><span className="text-default">Hello,</span>
                                 </span>
                             </a>
+                            <a href="/"  className="nav-link pr-0 leading-none">
                             
-                            }
+    <span className="ml-2 d-none d-lg-block"><span className="text-default">Log out</span>
+                                </span>
+                            </a>
+                            
+                            
                         </div>
                     </div>
                     <a href="/"   className="header-toggler d-lg-none ml-3 ml-lg-0"><span className="header-toggler-icon"></span></a>

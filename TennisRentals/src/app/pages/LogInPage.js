@@ -30,7 +30,7 @@ const LogInPage = (props) => {
                 firstName,
                 lastName
             })
-            
+            props.history.push('/')
             } else {
                 e.preventDefault();
                 setLogInOk(false);
