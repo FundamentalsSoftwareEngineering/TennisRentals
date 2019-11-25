@@ -1,4 +1,4 @@
-## Project name: TennisRentals
+## Project name: TennisRentals V1.1
 
 ```
 Synopsis:This is TennisRentals app where you can rent tennis courts or tables.
