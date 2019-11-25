@@ -7,9 +7,23 @@ Synopsis:This is TennisRentals app where you can rent tennis courts or tables.
 Usage: 
 Clone the project and inside the newly created project, you can run some built-in commands:
 
+Install node_modules:
+
+npm install
+
+Run npm server:
+
 npm start or yarn start
 Runs the app in development mode.
+
 Open http://localhost:3000 to view it in the browser.
+
+Install json-server:
+npm i json-server
+Run dev server:
+Go to /apiserver and run json-server db.1.json --p 3366
+
+This will start the dev server on port localhost:3366
 
 The page will automatically reload if you make changes to the code.
 You will see the build errors and lint warnings in the console.
