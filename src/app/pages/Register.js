@@ -1,9 +1,8 @@
 import React from 'react';
 import AppLayout from '../../shared/layout/AppLayout';
-import { useHistory } from "react-router-dom";
 
 const Register = (props) => {
-let history = useHistory();
+    console.log('wtf:', props);
     return (
         <AppLayout>
             <div className="page-content">
@@ -12,7 +11,7 @@ let history = useHistory();
                         <div className="card col col-md-10">
                             <div className="card-header d-flex justify-content-between">
                                 <h3 className="mt-2" style={{ display: 'inline-block'}}>Register</h3>
-                                <button
+                                <button onClick
                                     className="btn btn-info"> Back to login </button>
                             </div>
                             <form>
@@ -77,6 +76,6 @@ let history = useHistory();
             </div>
         </AppLayout>
     )
-}
+};
 
 export default Register;

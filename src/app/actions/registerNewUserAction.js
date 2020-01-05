@@ -15,6 +15,6 @@ export const registerNewUserAction = () => (dispatch, getState) => {
         lastName,
         email,
         password
-    }
+    };
     dispatch(createNewUserAction(newUser));
 };
