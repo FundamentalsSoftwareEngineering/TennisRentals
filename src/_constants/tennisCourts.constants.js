@@ -1,0 +1,4 @@
+export const tennisCourtsConstants = {
+    GET_ALL_TENNIS_COURTS: 'GET_ALL_TENNIS_COURTS',
+    CREATE_RESERVATION: 'CREATE_RESERVATION'
+};

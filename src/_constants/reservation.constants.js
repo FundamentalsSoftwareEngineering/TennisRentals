@@ -1,0 +1,4 @@
+export const reservationConstants = {
+    CREATE_RESERVATION: 'CREATE_RESERVATION',
+    DELETE_RESERVATION: 'DELETE_RESERVATION'
+};

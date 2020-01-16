@@ -1,61 +1,63 @@
-import React, { Component } from 'react';
-import { Route, Switch } from "react-router-dom";
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import "../styles/taskker.css";
-import './App.css';
+import React from 'react';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
+import { history } from '../_helpers';
+import { alertActions } from '../_actions';
+import { PrivateRoute } from '../_components';
+import { HomePage } from '../HomePage';
+import { LoginPage } from '../LoginPage';
+import { RegisterPage } from '../RegisterPage';
+import { TennisCourtsPage } from "../TennisCourtsPage/TennisCourtsPage";
+import { ProfilePage } from "../ProfilePage/ProfilePage";
+import { TennisTablesPage } from "../TennisTablesPage/TennisTablesPage";
 
- 
-import Register from './pages/Register';
-import TennisCourtsPage from './pages/TennisCourtsPage';
+class App extends React.Component {
+    constructor(props) {
+        super(props);
 
-import UserState from './context/users/state';
-import AppState from './context/app/state';
-import LogInPage from './pages/LogInPage';
-import { usersReducer } from './reducers/usersReducer';
-
-const rootReducer = combineReducers({
-  users: usersReducer,
-})
-
-const store = createStore(rootReducer, composeWithDevTools());
-
-class App extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    ceva: 'ceva'
+        history.listen((location, action) => {
+            // clear alert on location change
+            this.props.clearAlerts();
+        });
     }
-  }
 
+    render() {
+        const { alert } = this.props;
+        return (
 
-
-  render() {
-    return (
-      <Provider store={store}>
-              <Switch>
-                <Route>
-                  <AppState>
-                  <Route exact path="/" component={HomePage} />
-                  <Route exact path="/tennis-courts" component={TennisCourtsPage} />
-                  {/* <Route exact path="/tennis-tables" component={TennisTablesPage} /> */}
-                  <Route exact path="/profile" component={ProfilePage} />
-                  <UserState >
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/login" component={LogInPage} />
-                  </UserState>
-                  </AppState>
-                </Route>
-              </Switch>
-       </Provider>
-    );
-  }
+            <div className="jumbotron">
+                <div className="container">
+                    <div className="col-md-12">
+                        {alert.message &&
+                            <div className={`alert ${alert.type}`}>{alert.message}</div>
+                        }
+                        <Router history={history}>
+                            <Switch>
+                                <PrivateRoute exact path="/" component={HomePage} />
+                                <Route path="/login" component={LoginPage} />
+                                <Route path="/register" component={RegisterPage} />
+                                <Route path="/tennis-courts" component={TennisCourtsPage} />
+                                <Route path="/tennis-tables" component={TennisTablesPage} />
+                                <Route path="/profile" component={ProfilePage} />
+                                <Redirect from="*" to="/" />
+                            </Switch>
+                        </Router>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
-export default App;
+function mapState(state) {
+    const { alert } = state;
+    return { alert };
+}
+
+const actionCreators = {
+    clearAlerts: alertActions.clear
+};
+
+const connectedApp = connect(mapState, actionCreators)(App);
+export { connectedApp as App };
