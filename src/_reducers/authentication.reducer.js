@@ -22,7 +22,7 @@ export function authentication(state = initialState, action) {
     case profileConstants.UPDATE_PROFILE:
       return {
         loggingIn: true,
-        user: action.payload,
+        user: {...action.payload},
       };
 
     default:

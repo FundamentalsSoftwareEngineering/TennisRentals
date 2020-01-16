@@ -165,7 +165,7 @@ function mapState(state) {
 }
 
 const mapDispatch = (dispatch) => ({
-    update: (id, username, email, password, firstName, lastName) => dispatch(profileActions.updateProfile(id, username, email, password, firstName, lastName)),
+    update: (username, email, password, firstName, lastName) => dispatch(profileActions.updateProfile(username, email, password, firstName, lastName)),
     delete: (i) => dispatch(tennisCourtsActions.deleteReservationAction(i))
 });
 
